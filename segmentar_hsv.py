@@ -4,26 +4,25 @@ from matplotlib import pyplot as plt
 import time
 
 Im1 = cv2.imread('data/color.jpg')
-Im1lab = cv2.cvtColor(Im1, cv2.COLOR_BGR2LAB)
-L = Im1lab[:, :, 0]
-a = Im1lab[:, :, 1]  # Tomamos canal S (verdes negativo (0-127) y rojos positivo (128-25))
-b = Im1lab[:, :, 2]  # tomamos canal b (positivos amarillo, negativos azules)
-# H = np.double(H) # Conversión tipo de dato
-a = np.double(a)
-b = np.double(b)
-a = a - 128
-b = b - 128
+Im1lab = cv2.cvtColor(Im1, cv2.COLOR_BGR2HSV)
+H = Im1lab[:, :, 0]
+S = Im1lab[:, :, 1]  # Tomamos canal S (verdes negativo (0-127) y rojos positivo (128-25))
+V = Im1lab[:, :, 2]  # tomamos canal b (positivos amarillo, negativos azules)
+H = np.double(H) # Conversión tipo de dato
+S = np.double(S)
+V = np.double(V)
+
 
 K = 0  # Ajuste para determinar tonos de rojo detectados
-z = (np.bitwise_and(b < 0, np.abs(b) > np.abs(a)))
-# z=(S>0)
-new_a = a
-new_b = b
-new_a[z == 1] = np.abs(b[z == 1])
-new_b[z == 1] = a[z == 1]
-new_a[z == 1] = new_a[z == 1]
-Im1lab[:, :, 1] = new_a - 128
-Im1lab[:, :, 2] = new_b - 128
+z = (np.bitwise_and(V < 0, np.abs(V) > np.abs(S)))
+
+new_s = S
+new_v = V
+new_s[z == 1] = np.abs(V[z == 1])
+new_v[z == 1] = S[z == 1]
+new_s[z == 1] = new_s[z == 1]
+Im1lab[:, :, 1] = new_s - 128
+Im1lab[:, :, 2] = new_v - 128
 
 Im1lab = np.uint8(Im1lab)
 Im2 = cv2.cvtColor(Im1lab, cv2.COLOR_LAB2BGR)

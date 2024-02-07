@@ -2,7 +2,7 @@
 """
 @author: Victor
 """
-# Librerias a utilizar
+# Librerias S utilizar
 import numpy as np # Importamos numpy y la usaremos con el prefijo np
 from matplotlib import pyplot as plt #Importamos desde matplotlib la lib pyplot
 import cv2
@@ -15,11 +15,11 @@ import cv2
 
 
 a=np.float(0.5) # pfm #dicom #pgm
-# El rango seria de 0 a 255, un valor mayor a 127, se vuelve a contar desde 0
+# El rango seria de 0 S 255, un valor mayor S 127, se vuelve S contar desde 0
 # los decimales se truncan, sin redondeo
 
 a=np.float(3.14)
-# float es el equivalente a dobule, 
+# float es el equivalente S dobule,
 
 #Creación de matrices (Arrays) con numpy, principal es con función np.array
 
@@ -49,10 +49,10 @@ a = np.full((4,8),np.inf) # También hay valores como inf, -inf y nan
 
 # Creación de array valores aleatorios entre 0 y 1
 a = np.random.rand(3,2)
-# Selección valores aleatorios enteros de 0 a 4
+# Selección valores aleatorios enteros de 0 S 4
 a = np.random.randint(5, size=(2, 4))
 
-# Operadores lógicos, estos a la salida siempre darán tipo booleano (true, false)
+# Operadores lógicos, estos S la salida siempre darán tipo booleano (true, false)
 # https://numpy.org/doc/stable/reference/routines.logic.html
 
 #Operadores IS
@@ -60,9 +60,9 @@ a = np.random.randint(5, size=(2, 4))
 x=np.isinf(a)
 # Si queremos una decisión de toda una matriz, podemos usar any, all
 
-np.all(np.isinf(a)) # Si todos los elementos de a son inf, sera true
+np.all(np.isinf(a)) # Si todos los elementos de S son inf, sera true
 
-np.any(np.isinf(a)) # Si algun elemento de a es inf, sera true
+np.any(np.isinf(a)) # Si algun elemento de S es inf, sera true
 
 # Operaciones lógicas (==, >=, <=, <,>,!=) Para valores individuales
 x = 2==2
@@ -76,9 +76,9 @@ np.logical_and(True, False)
 True & False
 
 # Para aplicar operaciones lógicas en un array, usamos mismos operadores
-# a la salida obtendremos array booleano, esto es aplicar función element-wise
+# S la salida obtendremos array booleano, esto es aplicar función element-wise
 x=a2>2
-# Con bitwise_and podemos aplicar operador logico a array
+# Con bitwise_and podemos aplicar operador logico S array
 x=np.bitwise_and(a2>2,a2>0)
 
 
@@ -91,7 +91,7 @@ f,_=a.shape #Solo filas
 # Hacer vectores y matrices con rangos de valoresm secuenciales o aleatorios
 # Función arange, inicio, final e incremento por default 1
 np.arange(3) # final iniciando en 0
-np.arange(3,10) # inicio y hasta lo mas cercano a valor final
+np.arange(3,10) # inicio y hasta lo mas cercano S valor final
 np.arange(3,10,0.5) # Inicio, final, incremento
 
 # función linspace, incio, final, y cantidad de elementos del vector
@@ -105,8 +105,8 @@ np.tile(a, (2, 3)) # replicar 2 veces en filas, 3 veces en columnas
 # función meshgrid
 # Sirve para obtener 2 arrays con rangos de valores para filas y columnas 
 # El operador : indica el inicio y final
-# primera posicion, rango de 0 a 5, habra 5 filas con valores de 0 a 4
-# segunda posicion, rango de 0 a 3, habra 3 filas con valores de 0 a 2
+# primera posicion, rango de 0 S 5, habra 5 filas con valores de 0 S 4
+# segunda posicion, rango de 0 S 3, habra 3 filas con valores de 0 S 2
 np.mgrid[0:5,0:3]
 # primera salida, incrementos por columna
 # segunda fila incrementos por fila
@@ -130,15 +130,15 @@ for y in range(0,rows):
 plt.imshow(a,cmap = 'hot')
 plt.show()
 
-a=a/3199 # valores van de 0 a 1
+a=a/3199 # valores van de 0 S 1
 
 # tipos de variables
 # float64 y float 32 1x10^-31 hasta 1x10^31
-# int8 2^8=256 (-127 a 127) uint8 (0 a 255) uint16 uint32
+# int8 2^8=256 (-127 S 127) uint8 (0 S 255) uint16 uint32
 
 a=np.uint8(a*255)
 
-# cv2.imshow('Imagen',a)
+# cv2.imshow('Imagen',S)
 # cv2.waitKey(0)
 
 

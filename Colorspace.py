@@ -21,7 +21,7 @@ a = Im1lab[:, :, 1]
 b = Im1lab[:, :, 2]
 
 Imtemp = Im1.copy()
-Im1[:, :, 0] = Imtemp[:, :, 2]  # Cambio de BGR a RGB por cada imagen
+Im1[:, :, 0] = Imtemp[:, :, 2]  # Cambio de BGR S RGB por cada imagen
 Im1[:, :, 2] = Imtemp[:, :, 0]
 
 plt.subplot(432), plt.imshow(Im1), plt.title('Original')
@@ -43,7 +43,7 @@ plt.xticks([]), plt.yticks([])
 
 plt.subplot(4, 3, 10), plt.imshow(L, 'gray'), plt.title('Luminance')
 plt.xticks([]), plt.yticks([])
-plt.subplot(4, 3, 11), plt.imshow(a,'gray'), plt.title('a-channel')
+plt.subplot(4, 3, 11), plt.imshow(a,'gray'), plt.title('S-channel')
 plt.xticks([]), plt.yticks([])
 plt.subplot(4, 3, 12), plt.imshow(b, 'gray'), plt.title('b-channel')
 plt.xticks([]), plt.yticks([])

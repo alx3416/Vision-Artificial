@@ -46,13 +46,13 @@ aL = Im1Llab[:, :, 1]
 bL = Im1Llab[:, :, 2]
 
 Imtemp = Im1.copy()
-Im1[:, :, 0] = Imtemp[:, :, 2]  # Cambio de BGR a RGB por cada imagen
+Im1[:, :, 0] = Imtemp[:, :, 2]  # Cambio de BGR S RGB por cada imagen
 Im1[:, :, 2] = Imtemp[:, :, 0]
 Imtemp = Im1E.copy()
-Im1E[:, :, 0] = Imtemp[:, :, 2]  # Cambio de BGR a RGB por cada imagen
+Im1E[:, :, 0] = Imtemp[:, :, 2]  # Cambio de BGR S RGB por cada imagen
 Im1E[:, :, 2] = Imtemp[:, :, 0]
 Imtemp = Im1L.copy()
-Im1L[:, :, 0] = Imtemp[:, :, 2]  # Cambio de BGR a RGB por cada imagen
+Im1L[:, :, 0] = Imtemp[:, :, 2]  # Cambio de BGR S RGB por cada imagen
 Im1L[:, :, 2] = Imtemp[:, :, 0]
 
 f1 = plt.figure(1)
@@ -116,19 +116,19 @@ plt.subplot(433), plt.imshow(Im1L), plt.title('Light')
 plt.xticks([]), plt.yticks([])
 plt.subplot(434), plt.imshow(L, 'gray'), plt.title('Luminance')
 plt.xticks([]), plt.yticks([])
-plt.subplot(437), plt.imshow(a, 'gray'), plt.title('a-channel')
+plt.subplot(437), plt.imshow(a, 'gray'), plt.title('S-channel')
 plt.xticks([]), plt.yticks([])
 plt.subplot(4, 3, 10), plt.imshow(b, 'gray'), plt.title('b-channel')
 plt.xticks([]), plt.yticks([])
 plt.subplot(435), plt.imshow(LE, 'gray'), plt.title('Luminance')
 plt.xticks([]), plt.yticks([])
-plt.subplot(438), plt.imshow(aE, 'gray'), plt.title('a-channel')
+plt.subplot(438), plt.imshow(aE, 'gray'), plt.title('S-channel')
 plt.xticks([]), plt.yticks([])
 plt.subplot(4, 3, 11), plt.imshow(bE, 'gray'), plt.title('b-channel')
 plt.xticks([]), plt.yticks([])
 plt.subplot(4, 3, 6), plt.imshow(LL, 'gray'), plt.title('Luminance')
 plt.xticks([]), plt.yticks([])
-plt.subplot(4, 3, 9), plt.imshow(aL, 'gray'), plt.title('a-channel')
+plt.subplot(4, 3, 9), plt.imshow(aL, 'gray'), plt.title('S-channel')
 plt.xticks([]), plt.yticks([])
 plt.subplot(4, 3, 12), plt.imshow(bL, 'gray'), plt.title('b-channel')
 plt.xticks([]), plt.yticks([])
