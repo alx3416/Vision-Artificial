@@ -6,7 +6,7 @@ from scipy import signal
 Im1 = cv2.imread('lena.jpg')
 img = cv2.cvtColor(Im1, cv2.COLOR_BGR2GRAY)
 
-# edges = cv2.Canny(img,50,50)
+edges = cv2.Canny(img,50,50)
 
 # Con Convolución 2D
 Kernel = np.array([1, -1], ndmin=2)
@@ -34,6 +34,6 @@ plt.subplot(222), plt.imshow(Gx, cmap='gray')
 plt.title('Vertical'), plt.xticks([]), plt.yticks([])
 plt.subplot(223), plt.imshow(Gy, cmap='gray')
 plt.title('Horizontal'), plt.xticks([]), plt.yticks([])
-plt.subplot(224), plt.imshow(G, cmap='gray')
+plt.subplot(224), plt.imshow(edges, cmap='gray')
 plt.title('Magnitud'), plt.xticks([]), plt.yticks([])
 plt.show()

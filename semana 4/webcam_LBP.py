@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 from LBP import LBP
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 ret, frame = cap.read()
 cimg = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
